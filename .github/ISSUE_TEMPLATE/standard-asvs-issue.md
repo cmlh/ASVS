@@ -9,13 +9,9 @@ assignees: ''
 
 <!---
 BEFORE YOU OPEN AN ISSUE:
-- If you have a question about content, make sure you are looking at the raw .md files which contain the master version of the text and not in the CSV, JSON, XLSX, PDF, DOCX files which are derived from this.
-- Please search the issues in case your question has been discussed before.
-- Make sure you are looking at the latest edits at: https://github.com/OWASP/ASVS/tree/master/4.0
-- When you reference requirements, please include them as a link, similarly to this:
-[6.1.2](https://github.com/OWASP/ASVS/blob/master/4.0/en/0x14-V6-Cryptography.md#v61-data-classification)
-
-OTHER NOTES:
-- Please do not open a pull request without first opening an associated issue.
-- Please carry out all discussion in the associated issue only.
--->
+-[ ] An existing issue was not found within https://github.com/OWASP/ASVS/issues?q=is%3Aissue+InsertSearchTerm
+-[ ] The Markdown has been searched in its entirety with https://github.com/search?q=in%3Afile+repo%3AOWASP%2FASVS+InsertSearchTerm&type=Code
+-[ ] Cited the specific line[s] of the specific requirement[s] with ["Blame"](https://docs.github.com/en/repositories/working-with-files/using-files/tracking-changes-in-a-file)
+-[ ] Listed the a parent[s] or child issue[s] of this new issue if any
+-[ ] Listed the related Pull Requests to this issue
+-[ ] This issue is a breaking change to the current major release [and should not be merged into the associated minor release]
