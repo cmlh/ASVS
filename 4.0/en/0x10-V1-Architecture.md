@@ -44,7 +44,7 @@ This is a placeholder for future architectural requirements.
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **1.4.1** | [MODIFIED] Verify that trusted enforcement points, such as access control gateways, servers, and serverless functions, enforce access controls. Never enforce access controls on the client. | | ✓ | ✓ | 602 |
 | **1.4.2** | [DELETED] | | | | |
-| **1.4.3** | Verify enforcement of the principle of least privilege in functions, data files, URLs, controllers, services, and other resources. This implies protection against spoofing and elevation of privilege. | | ✓ | ✓ | 272 |
+| **1.4.3** | [DELETED, DUPLICATE OF 4.1.3] | | | | |
 | **1.4.4** | Verify the application uses a single and well-vetted access control mechanism for accessing protected data and resources. All requests must pass through this single mechanism to avoid copy and paste or insecure alternative paths. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 284 |
 | **1.4.5** | Verify that attribute or feature-based access control is used whereby the code checks the user's authorization for a feature/data item rather than just their role. Permissions should still be allocated using roles. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 275 |
 | **1.4.6** | [ADDED] Verify that communications between application components, including APIs, middleware and data layers, are performed with the least necessary privileges. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 272 |
@@ -58,7 +58,7 @@ The "untrusted client" term here refers to client-side technologies that render 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **1.5.1** | Verify that input and output requirements clearly define how to handle and process data based on type, content, and applicable laws, regulations, and other policy compliance. | | ✓ | ✓ | 1029 |
-| **1.5.2** | [MODIFIED] Verify that serialization is not used when communicating with untrusted clients. If this is not possible, ensure that deserialization is performed safely, for example by only allowing a white-list of object types or not allowing the client to define the object type to deserialize to, in order to prevent deserialization attacks. | | ✓ | ✓ | 502 |
+| **1.5.2** | [DELETED, MERGED TO 5.5.3] | | | | |
 | **1.5.3** | [MOVED TO 5.1.6] | | | | |
 | **1.5.4** | Verify that output encoding occurs close to or by the interpreter for which it is intended. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 116 |
 
@@ -114,7 +114,7 @@ Architectural requirements are intrinsic to the entire code base, and thus diffi
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.12.1** | Verify that user-uploaded files are stored outside of the web root. | | ✓ | ✓ | 552 |
+| **1.12.1** | [DELETED, DUPLICATE OF 12.4.1] | | | | |
 | **1.12.2** | Verify that user-uploaded files - if required to be displayed or downloaded from the application - are served by either octet stream downloads, or from an unrelated domain, such as a cloud file storage bucket. Implement a suitable Content Security Policy (CSP) to reduce the risk from XSS vectors or other attacks from the uploaded file. | | ✓ | ✓ | 646 |
 
 ## V1.13 API Architecture

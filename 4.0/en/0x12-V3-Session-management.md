@@ -39,7 +39,7 @@ L1 in this context is IAL1/AAL1, L2 is IAL2/AAL3, L3 is IAL3/AAL3. For IAL2/AAL2
 | **3.3.1** | Verify that logout and expiration invalidate the session token, such that the back button or a downstream relying party does not resume an authenticated session, including across relying parties. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | 613 | 7.1 |
 | **3.3.2** | If authenticators permit users to remain logged in, verify that re-authentication occurs periodically both when actively used or after an idle period. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | 30 days | 12 hours or 30 minutes of inactivity, 2FA optional | 12 hours or 15 minutes of inactivity, with 2FA | 613 | 7.2 |
 | **3.3.3** | [LEVEL L2 > L1] Verify that the application gives the option to terminate all other active sessions after a successful password change (including change via password reset/recovery), and that this is effective across the application, federated login (if present), and any relying parties. | ✓ | ✓ | ✓ | 613 | |
-| **3.3.4** | Verify that users are able to view and (having re-entered login credentials) log out of any or all currently active sessions and devices. | | ✓ | ✓ | 613 | 7.1 |
+| **3.3.4** | [DELETED, DUPLICATE OF 3.3.3] | | | | | |
 | **3.3.5** | [ADDED] Verify that all pages that require authentication have easy and visible access to logout functionality. | ✓ | ✓ | ✓ | | |
 
 ## V3.4 Cookie-based Session Management
@@ -49,8 +49,8 @@ L1 in this context is IAL1/AAL1, L2 is IAL2/AAL3, L3 is IAL3/AAL3. For IAL2/AAL2
 | **3.4.1** | Verify that cookie-based session tokens have the 'Secure' attribute set. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | 614 | 7.1.1 |
 | **3.4.2** | Verify that cookie-based session tokens have the 'HttpOnly' attribute set. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | 1004 | 7.1.1 |
 | **3.4.3** | Verify that cookie-based session tokens utilize the 'SameSite' attribute to limit exposure to cross-site request forgery attacks. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | 16 | 7.1.1 |
-| **3.4.4** | Verify that cookie-based session tokens use the "__Host-" prefix so cookies are only sent to the host that initially set the cookie. | ✓ | ✓ | ✓ | 16 | 7.1.1 |
-| **3.4.5** | Verify that if the application is published under a domain name with other applications that set or use session cookies that might override or disclose the session cookies, set the path attribute in cookie-based session tokens using the most precise path possible. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | 16 | 7.1.1 |
+| **3.4.4** | [MODIFIED] Verify that cookie-based session tokens use the "__Host-" prefix so cookies are only sent to the host that initially set the cookie. | ✓ | ✓ | ✓ | 16 | 7.1.1 |
+| **3.4.5** | [MODIFIED] Verify that if the application is published under a domain name with other applications that set or use session cookies that might disclose the session cookies, set the path attribute in cookie-based session tokens using the most precise path possible. ([C6](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | 16 | 7.1.1 |
 | **3.4.6** | [ADDED] Verify that cookie-based session tokens are only transferred in Set-Cookie and Cookie headers. | ✓ | ✓ | ✓ | 200 | |
 
 ## V3.5 Token-based Session Management
@@ -59,9 +59,12 @@ Token-based session management includes JWT, OAuth, SAML, and API keys. Of these
 
 | # | Description | L1 | L2 | L3 | CWE | [NIST &sect;](https://pages.nist.gov/800-63-3/sp800-63b.html) |
 | :---: | :--- | :---: | :---:| :---: | :---: | :---: |
-| **3.5.1** | [DELETED, DUPE OF 3.3.4] | | | | | |
+| **3.5.1** | [DELETED, DUPLICATE OF 3.3.4] | | | | | |
 | **3.5.2** | Verify the application uses session tokens rather than static API secrets and keys, except with legacy implementations. | | ✓ | ✓ | 798 | |
 | **3.5.3** | [MODIFIED, LEVEL L2 > L1] Verify that stateless session tokens make use of digital signatures to protect against tampering. | ✓ | ✓ | ✓ | 345 | |
+| **3.5.4** | [ADDED] Verify expiration of JWTs is checked in the backend service. | ✓ | ✓ | ✓ | 613 | |
+| **3.5.5** | [ADDED] Verify that integrity algorithm validation is being done by the backend service for the JWTs and that only valid algorithm types are enforced by the backend service. | ✓ | ✓ | ✓ | 347 | |
+| **3.5.6** | [ADDED] Verify proper validation of the JWT payload claims are done by the backend service including the issuer, subject, and audience. | ✓ | ✓ | ✓ | 287 | |
 
 ## V3.6 Federated Re-authentication
 
